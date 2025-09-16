@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import api from "../../utils/api";
+import api from "../../services/api";
 import StatusUpdateModal from "../StatusUpdateModal";
 import ImageModal from "../ImageModal";
 import {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import api from "../../utils/api";
+import api from "../../services/api";
 
 const MunicipalDepartment = () => {
   const { user } = useAuth();

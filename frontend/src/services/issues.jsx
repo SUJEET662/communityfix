@@ -1,4 +1,4 @@
-import api from "../utils/api";
+import api from "./api";
 
 export const issueService = {
   getAll: async (filters = {}) => {
