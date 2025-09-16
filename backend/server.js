@@ -16,10 +16,42 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-app.use("/api/auth", require("./routes/auth"));
-app.use("/api/issues", require("./routes/issues"));
-app.use("/api/comments", require("./routes/comments"));
-app.use("/api/departments", require("./routes/departments"));
+// ✅ ADD DEBUG LOGGING HERE
+console.log("🔍 Starting to mount routes...");
+
+try {
+  console.log("🔄 Loading auth routes...");
+  app.use("/api/auth", require("./routes/auth"));
+  console.log("✅ Auth routes mounted successfully");
+} catch (error) {
+  console.error("❌ ERROR loading auth routes:", error.message);
+}
+
+try {
+  console.log("🔄 Loading issues routes...");
+  app.use("/api/issues", require("./routes/issues"));
+  console.log("✅ Issues routes mounted successfully");
+} catch (error) {
+  console.error("❌ ERROR loading issues routes:", error.message);
+}
+
+try {
+  console.log("🔄 Loading comments routes...");
+  app.use("/api/comments", require("./routes/comments"));
+  console.log("✅ Comments routes mounted successfully");
+} catch (error) {
+  console.error("❌ ERROR loading comments routes:", error.message);
+}
+
+try {
+  console.log("🔄 Loading departments routes...");
+  app.use("/api/departments", require("./routes/departments"));
+  console.log("✅ Departments routes mounted successfully");
+} catch (error) {
+  console.error("❌ ERROR loading departments routes:", error.message);
+}
+
+console.log("🔍 All routes mounting attempted");
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -39,5 +71,5 @@ app.use("*", (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
