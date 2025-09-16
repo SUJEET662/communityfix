@@ -1,7 +1,9 @@
-# Node modules
+# Dependency directories
 **/node_modules/
 
 # Build directories
+/build/
+/dist/
 /frontend/build/
 /frontend/dist/
 
@@ -13,50 +15,51 @@
 # Uploaded files
 /backend/uploads/
 
-# Logs
-.log
-npm-debug.log
+# Log files
+*.log
+npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# IDEs and editors
-.idea/
-.vscode/
-*.swp
-*.bak
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Coverage directory used by tools like istanbul
-/coverage/
-.nyc_output/
-
-# Build output
-/dist/
-/build/
-
-# Dependency directories
+# Runtime data
 *.pid
 *.seed
 *.pid.lock
 
-# Optional npm cache directory
-.npm
+# Coverage reports
+/coverage/
+.nyc_output/
+*.lcov
 
-# Optional eslint cache
+# Cache directories
+.npm/
 .eslintcache
-
-# Mac system files
-.node_repl_history
-
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# parcel-bundler cache (https://parceljs.org/)
 .cache/
 .parcel-cache/
 
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.tgz
+.yarn-integrity
+
+# Optional REPL history
+.node_repl_history
+
+# Temporary folders
+tmp/
+temp/
