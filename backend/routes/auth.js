@@ -50,7 +50,9 @@ router.post("/register", async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
+    console.log("🔐 Login endpoint hit!", req.body);
     const { email, password } = req.body;
+    console.log("📧 Email received:", email);
 
     console.log('Login attempt:', email); 
 
