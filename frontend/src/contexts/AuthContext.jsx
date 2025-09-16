@@ -30,30 +30,28 @@ export const AuthProvider = ({ children }) => {
       const response = await api.get("/api/auth/me");
       setUser(response.data.data);
     } catch (error) {
-      console.error("Error getting user:", error);
       logout();
     } finally {
       setLoading(false);
     }
   };
+const login = async (email, password) => {
+  try {
+    const response = await api.post("/api/auth/login", { email, password });
+    const { token: newToken, data } = response.data;
 
-  const login = async (email, password) => {
-    try {
-      const response = await api.post("/api/auth/login", { email, password });
-      const { token: newToken, data } = response.data;
+    setToken(newToken);
+    setUser(data.user);
+    localStorage.setItem("token", newToken);
 
-      setToken(newToken);
-      setUser(data.user);
-      localStorage.setItem("token", newToken);
-
-      return { success: true };
-    } catch (error) {
-      return {
-        success: false,
-        message: error.response?.data?.message || "Login failed",
-      };
-    }
-  };
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      message: error.response?.data?.message || "Login failed",
+    };
+  }
+};
 
   const register = async (userData) => {
     try {

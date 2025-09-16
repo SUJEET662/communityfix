@@ -13,6 +13,8 @@ import Register from "./pages/Register";
 import DashboardRouter from "./components/DashboardRouter";
 import PrivateRoute from "./components/PrivateRoute";
 
+
+
 function App() {
   return (
     <AuthProvider>
