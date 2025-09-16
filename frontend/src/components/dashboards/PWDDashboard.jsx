@@ -294,7 +294,7 @@ const PWDDashboard = () => {
                             {issue.images.map((image, index) => (
                               <img
                                 key={index}
-                                src={`http://localhost:5000${image}`}
+                                src={`https://communityfix-backend.onrender.com${image}`}
                                 alt={`Issue ${index + 1}`}
                                 className="w-20 h-20 object-cover rounded-lg border"
                               />

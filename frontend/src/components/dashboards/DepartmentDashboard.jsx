@@ -448,7 +448,6 @@ const DepartmentDashboard = () => {
                         </span>
                       </div>
 
-
                       {(issue.images && issue.images.length > 0) ||
                       (issue.verificationImages &&
                         issue.verificationImages.length > 0) ? (
@@ -460,7 +459,7 @@ const DepartmentDashboard = () => {
                             {issue.images?.map((image, index) => (
                               <div key={index} className="relative group">
                                 <img
-                                  src={`http://localhost:5000${image}`}
+                                  src={`https://communityfix-backend.onrender.com${image}`}
                                   alt={`Issue ${index + 1}`}
                                   className="w-20 h-20 object-cover rounded-lg border border-gray-300 cursor-pointer transition-transform group-hover:scale-105"
                                   onClick={() =>
@@ -478,7 +477,7 @@ const DepartmentDashboard = () => {
                                 className="relative group"
                               >
                                 <img
-                                  src={`http://localhost:5000${image}`}
+                                  src={`https://communityfix-backend.onrender.com${image}`}
                                   alt={`Verification ${index + 1}`}
                                   className="w-20 h-20 object-cover rounded-lg border border-purple-300 cursor-pointer transition-transform group-hover:scale-105"
                                   onClick={() =>

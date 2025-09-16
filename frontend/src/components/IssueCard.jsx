@@ -200,7 +200,7 @@ const IssueCard = ({ issue, onVote, onStatusUpdate, onVerification }) => {
                   onClick={() => openImageModal(image)}
                 >
                   <img
-                    src={`http://localhost:5000${image}`}
+                    src={`https://communityfix-backend.onrender.com${image}`}
                     alt={`Issue ${index + 1}`}
                     className="w-24 h-24 object-cover rounded-lg shadow-sm transition-transform group-hover:scale-105"
                     onError={(e) => {

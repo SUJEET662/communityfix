@@ -494,7 +494,7 @@ const AdminDashboard = () => {
                           {issue.images.slice(0, 3).map((image, index) => (
                             <div key={index} className="relative">
                               <img
-                                src={`http://localhost:5000${image}`}
+                                src={`https://communityfix-backend.onrender.com${image}`}
                                 alt={`Issue ${index + 1}`}
                                 className="w-16 h-16 object-cover rounded-lg border border-gray-300 cursor-pointer"
                                 onClick={() =>
@@ -600,7 +600,7 @@ const AdminDashboard = () => {
                         {issue.images.slice(0, 3).map((image, index) => (
                           <div key={index} className="relative">
                             <img
-                              src={`http://localhost:5000${image}`}
+                              src={`https://communityfix-backend.onrender.com${image}`}
                               alt={`Issue ${index + 1}`}
                               className="w-16 h-16 object-cover rounded-lg border border-gray-300 cursor-pointer"
                               onClick={() =>
