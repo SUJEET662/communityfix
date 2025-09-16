@@ -19,7 +19,7 @@ const PublicDashboard = () => {
 
   const fetchUserIssues = async () => {
     try {
-      const response = await api.get("/issues");
+      const response = await api.get("/api/issues");
       const userReportedIssues = response.data.data.filter(
         (issue) => issue.reportedBy && issue.reportedBy._id === user._id
       );

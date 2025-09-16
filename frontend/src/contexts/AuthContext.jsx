@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 
   const getUser = async () => {
     try {
-      const response = await api.get("/auth/me");
+      const response = await api.get("/api/auth/me");
       setUser(response.data.data);
     } catch (error) {
       console.error("Error getting user:", error);
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await api.post("/auth/login", { email, password });
+      const response = await api.post("/api/auth/login", { email, password });
       const { token: newToken, data } = response.data;
 
       setToken(newToken);
@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await api.post("/auth/register", userData);
+      const response = await api.post("/api/auth/register", userData);
       const { token: newToken, data } = response.data;
 
       setToken(newToken);

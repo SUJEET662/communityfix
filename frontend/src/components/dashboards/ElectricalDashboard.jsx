@@ -67,7 +67,7 @@ const ElectricalDashboard = () => {
 
   const fetchDashboardData = useCallback(async () => {
     try {
-      const issuesRes = await api.get("/issues?limit=500");
+      const issuesRes = await api.get("/api/issues?limit=500");
       const issuesData = issuesRes.data.data.issues || issuesRes.data.issues;
 
       const electricalIssuesData = issuesData.filter(
@@ -139,7 +139,7 @@ const ElectricalDashboard = () => {
 
   const handleStatusUpdate = async (issueId, newStatus, note) => {
     try {
-      await api.put(`/issues/${issueId}/status`, {
+      await api.put(`/api/issues/${issueId}/status`, {
         status: newStatus,
         note: note || `Status updated by ${user.username}`,
       });

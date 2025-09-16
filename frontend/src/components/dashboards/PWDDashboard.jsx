@@ -23,7 +23,7 @@ const PWDDashboard = () => {
 
   const fetchDepartmentIssues = async () => {
     try {
-      const response = await api.get("/issues");
+      const response = await api.get("/api/issues");
       const pwdIssues = response.data.data.filter(
         (issue) =>
           issue.category &&
@@ -80,7 +80,7 @@ const PWDDashboard = () => {
 
   const updateIssueStatus = async (issueId, newStatus) => {
     try {
-      await api.put(`/issues/${issueId}`, { status: newStatus });
+      await api.put(`/api/issues/${issueId}`, { status: newStatus });
       fetchDepartmentIssues();
     } catch (error) {
       console.error("Error updating issue status:", error);
@@ -89,7 +89,7 @@ const PWDDashboard = () => {
 
   const markAsRoadSafety = async (issueId) => {
     try {
-      await api.put(`/issues/${issueId}`, {
+      await api.put(`/api/issues/${issueId}`, {
         priority: "high",
         tags: ["road-safety"],
       });

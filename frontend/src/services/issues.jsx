@@ -10,17 +10,17 @@ export const issueService = {
       }
     });
 
-    const response = await api.get(`/issues?${params}`);
+    const response = await api.get(`/api/issues?${params}`);
     return response.data;
   },
 
   getById: async (id) => {
-    const response = await api.get(`/issues/${id}`);
+    const response = await api.get(`/api/issues/${id}`);
     return response.data;
   },
 
   create: async (issueData) => {
-    const response = await api.post("/issues", issueData, {
+    const response = await api.post("/api/issues", issueData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -29,12 +29,12 @@ export const issueService = {
   },
 
   update: async (id, issueData) => {
-    const response = await api.put(`/issues/${id}`, issueData);
+    const response = await api.put(`/api/issues/${id}`, issueData);
     return response.data;
   },
 
   vote: async (id, voteType) => {
-    const response = await api.post(`/issues/${id}/vote`, { voteType });
+    const response = await api.post(`/api/issues/${id}/vote`, { voteType });
     return response.data;
   },
 

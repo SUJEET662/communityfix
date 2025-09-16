@@ -30,7 +30,7 @@ const DepartmentDashboard = () => {
 
   const fetchDepartmentIssues = async () => {
     try {
-      const response = await api.get("/issues?limit=100");
+      const response = await api.get("/api/issues?limit=100");
       const issuesData = response.data.data || response.data;
 
       const userDepartment = user.department || user.role;
@@ -97,7 +97,7 @@ const DepartmentDashboard = () => {
 
   const updateIssueStatus = async (issueId, newStatus, note = "") => {
     try {
-      await api.put(`/issues/${issueId}/status`, {
+      await api.put(`/api/issues/${issueId}/status`, {
         status: newStatus,
         note: note || `Status updated to ${newStatus} by ${user.username}`,
       });
@@ -130,7 +130,7 @@ const DepartmentDashboard = () => {
     try {
       if (!noteInputs[issueId] || noteInputs[issueId].trim() === "") return;
 
-      await api.post(`/issues/${issueId}/note`, {
+      await api.post(`/api/issues/${issueId}/note`, {
         note: noteInputs[issueId],
         userId: user._id,
       });
@@ -168,7 +168,7 @@ const DepartmentDashboard = () => {
         formData.append("verificationImages", file);
       });
 
-      await api.post(`/issues/${issueId}/verification`, formData, {
+      await api.post(`/api/issues/${issueId}/verification`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

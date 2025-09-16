@@ -45,9 +45,9 @@ const AdminDashboard = () => {
   const fetchDashboardData = useCallback(async () => {
     try {
       const [usersRes, issuesRes, departmentsRes] = await Promise.all([
-        api.get("/auth/users"),
-        api.get("/issues?limit=500"),
-        api.get("/departments"),
+        api.get("/api/auth/users"),
+        api.get("/api/issues?limit=500"),
+        api.get("/api/departments"),
       ]);
 
       // Debug: Log the API responses to see their structure
@@ -229,7 +229,7 @@ const AdminDashboard = () => {
 
   const handleStatusUpdate = async (issueId, newStatus, note) => {
     try {
-      await api.put(`/issues/${issueId}/status`, {
+      await api.put(`/api/issues/${issueId}/status`, {
         status: newStatus,
         note: note || `Status updated by ${user.username}`,
       });
