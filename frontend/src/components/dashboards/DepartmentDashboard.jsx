@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import api from "../../utils/api";
-import ImageModal from "../../components/ImageModal";
+import ImageModal from "../ImageModal";
 import StatusUpdateModal from "../StatusUpdateModal";
 
 const DepartmentDashboard = () => {
