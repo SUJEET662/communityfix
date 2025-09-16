@@ -1,23 +1,62 @@
-# Dependency directories
-node_modules/
+# Node modules
+**/node_modules/
 
-# Frontend build artifacts
-/frontend/build
-/frontend/dist
+# Build directories
+/frontend/build/
+/frontend/dist/
 
 # Environment variables
 .env
-.env.local
+.env.*
+!.env.example
 
-# Backend user-uploaded files
+# Uploaded files
 /backend/uploads/
 
 # Logs
-npm-debug.log*
+.log
+npm-debug.log
 yarn-debug.log*
-*.log
+yarn-error.log*
 
-# IDE and OS files
+# IDEs and editors
 .idea/
 .vscode/
+*.swp
+*.bak
+
+# System files
 .DS_Store
+Thumbs.db
+
+# Coverage directory used by tools like istanbul
+/coverage/
+.nyc_output/
+
+# Build output
+/dist/
+/build/
+
+# Dependency directories
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Mac system files
+.node_repl_history
+
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache/
+.parcel-cache/
+
